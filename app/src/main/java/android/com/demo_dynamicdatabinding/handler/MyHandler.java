@@ -6,8 +6,22 @@ import android.view.View;
 /**
  * Created by amitrai on 9/5/16.
  */
-public class MyHandler {
-    private String TAG = MyHandler.class.getSimpleName();
+public class MyHandler{
+    public String TAG = MyHandler.class.getSimpleName();
+    public MyHandler handler = null;
+    public MyHandler(){
+        handler = new MyHandler();
+    }
+
+    public MyHandler getHandler() {
+        if(handler == null)
+            handler = new MyHandler();
+        return handler;
+    }
+
+    public void setHandler(MyHandler handler) {
+        this.handler = handler;
+    }
 
     public void onClickFriend(View view) {
         Log.e(TAG, "I AM FRIEND HANDLER");
